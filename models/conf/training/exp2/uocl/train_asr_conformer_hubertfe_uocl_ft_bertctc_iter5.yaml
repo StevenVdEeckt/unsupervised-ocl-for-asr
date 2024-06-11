@@ -1,0 +1,95 @@
+# Trained with Ampere A6000(48GB) x 2 GPUs. It takes about 10 days.
+best_model_criterion:
+-   - valid
+    - loss
+    - min
+keep_nbest_models: 1
+unused_parameters: true
+
+freeze_param: [
+"frontend.upstream",
+"preencoder",
+]
+
+frontend: s3prl
+frontend_conf:
+    frontend_conf:
+        upstream: hubert_large_ll60k  # Note: If the upstream is changed, please change the input_size in the preencoder.
+    download_dir: ./hub
+    multilayer_feature: True
+
+preencoder: linear
+preencoder_conf:
+    input_size: 1024  # Note: If the upstream is changed, please change this value accordingly.
+    output_size: 80
+
+encoder: conformer
+encoder_conf:
+    output_size: 256
+    attention_heads: 4
+    linear_units: 2048
+    num_blocks: 6
+    dropout_rate: 0.1
+    positional_dropout_rate: 0.1
+    attention_dropout_rate: 0.1
+    input_layer: conv2d2
+    normalize_before: true
+    macaron_style: true
+    pos_enc_layer_type: "rel_pos"
+    selfattention_layer_type: "rel_selfattn"
+    activation_type: "swish"
+    use_cnn_module:  true
+    cnn_module_kernel: 15
+
+decoder: transformer
+decoder_conf:
+    linear_units: 2048
+    num_blocks: 6
+    dropout_rate: 0.1
+    positional_dropout_rate: 0.1
+    self_attention_dropout_rate: 0.1
+    src_attention_dropout_rate: 0.1
+    input_layer: embed
+
+model_conf:
+    ctc_weight: 0.3
+    lsm_weight: 0.1
+    length_normalized_loss: false
+    extract_feats_in_collect_stats: false   # Note: "False" means during collect stats (stage 10), generating dummy stats files rather than extract_feats by forward frontend.
+
+# optimization related
+optim: sgd
+batch_size: 8
+batch_type: speaker-task
+accum_grad: 4
+grad_clip: 3
+max_epoch: 1
+patience: 30
+optim_conf:
+    lr: 0.01
+
+unsupervised: true
+
+st_method: bertctc_based
+st_method_conf:
+        n_iterations: 5
+        mask_ctc_model: exp/ucl/asr_train_asr_conformer_hubertfe_e6_d6_bert_ctc_fz_enc_none_ctc03_raw_lib360_bpe5000_from_lib360
+        tokenizer: data/lib360_token_list/bpe_unigram5000/bpe.model
+
+cl_method: uft
+
+specaug: specaug
+specaug_conf:
+    apply_time_warp: true
+    time_warp_window: 5
+    time_warp_mode: bicubic
+    apply_freq_mask: true
+    freq_mask_width_range:
+    - 0
+    - 30
+    num_freq_mask: 2
+    apply_time_mask: true
+    time_mask_width_range:
+    - 0
+    - 40
+    num_time_mask: 2

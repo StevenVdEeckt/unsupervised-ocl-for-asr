@@ -1,0 +1,99 @@
+batch_size: 64
+accum_grad: 1
+max_epoch: 40
+patience: none
+init: none
+keep_nbest_models: 10
+
+freeze_param: [
+        'frontend',
+        'preencoder',
+        'encoder',
+        'predecoder',
+]
+
+unused_parameters: true
+
+best_model_criterion:
+-   - valid
+    - cer_ctc_dec
+    - min
+model: bertctc
+
+frontend: s3prl
+frontend_conf:
+    frontend_conf:
+        upstream: hubert_large_ll60k  # Note: If the upstream is changed, please change the input_size in the preencoder.
+    download_dir: ./hub
+    multilayer_feature: True
+
+preencoder: linear
+preencoder_conf:
+    input_size: 1024  # Note: If the upstream is changed, please change this value accordingly.
+    output_size: 80
+
+# encoder related
+encoder: conformer
+encoder_conf:
+    output_size: 256
+    attention_heads: 4
+    linear_units: 2048
+    num_blocks: 6
+    dropout_rate: 0.1
+    positional_dropout_rate: 0.1
+    attention_dropout_rate: 0.1
+    input_layer: conv2d2
+    normalize_before: true
+    macaron_style: true
+    pos_enc_layer_type: "rel_pos"
+    selfattention_layer_type: "rel_selfattn"
+    activation_type: "swish"
+    use_cnn_module:  true
+    cnn_module_kernel: 15
+
+predecoder: hugging_face_transformers
+predecoder_conf: 
+    model_name_or_path: "bert-base-uncased"
+
+# decoder related
+decoder: trf_encoder
+decoder_conf:
+    input_layer: identity
+    output_size: 256
+    attention_heads: 4
+    num_blocks: 6
+    linear_units: 2048
+    dropout_rate: 0.1
+    positional_dropout_rate: 0.1
+    attention_dropout_rate: 0.1
+
+model_conf:
+    asr_weight: 0.3
+    lsm_weight: 0.1
+    length_normalized_loss: false
+    predec_drop_rate: 0.0
+    embed_enc_layer: none
+    extract_feats_in_collect_stats: false
+
+optim: adam
+optim_conf:
+    lr: 0.4
+scheduler: noamlr
+scheduler_conf:
+    warmup_steps: 25000
+
+specaug: specaug
+specaug_conf:
+    apply_time_warp: true
+    time_warp_window: 5
+    time_warp_mode: bicubic
+    apply_freq_mask: true
+    freq_mask_width_range:
+    - 0
+    - 30
+    num_freq_mask: 2
+    apply_time_mask: true
+    time_mask_width_range:
+    - 0
+    - 40
+    num_time_mask: 2
