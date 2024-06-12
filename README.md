@@ -84,7 +84,7 @@ In addition to the model configuration files, the models directory contains Sent
 
 ## statistical significance
 
-Statistical significance of the results was tested by computing the number of errors per utterance [Strik et al., 2000] for each method and comparing two methods with Wilcoxon sign-rank test. Three levels of significance were considered: 0.05 (*), 0.01 (**) and 0.001 (***).
+Statistical significance of the results was tested by computing the number of errors per utterance [Strik et al., 2000] for each method and comparing two methods with Wilcoxon sign-rank test. Three levels of significance were considered: 0.05 (\*), 0.01 (\*\*) and 0.001 (\*\*\*).
 
 Below are the results from the statistical significance tests. Note that a green color means that the method corresponding to the row was significantly better than the method corresponding to the column with the given signifcance level, while a red color means that the former was worse than the latter and a yellow color that there was no significant difference between the two.  
 
