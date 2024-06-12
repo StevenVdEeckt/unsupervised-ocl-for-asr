@@ -56,7 +56,7 @@ For ER, we consider the implementation of [Vander Eeckt and Van hamme, 2022]. Fo
 
 The table below shows the hyper-parameters optimized for each method, as well as the values tested, the default value and the optimal value. Between square brackets for the two last columns is the $Avg.WER$ for the given setting on the test experiment. 
 
-method  | hyper-parameters | values tried | default | optimal
+method  | hyper-parameters | values tested | default | optimal
 ------------- | ------------- | ------------- | ------------- | ------------- 
 ER | $\lambda$ | $(0.1, 0.2, 0.3, 0.5)$ | $0.1$ $[7.36]$ | $0.5$ $[6.84]$
 AOS | $\tau$, $\tau_2$, $\lambda$ | $(1, 5, 10, 20)$, $(1)$, $(0.1)$ | $1, 1, 0.1$ $[8.01]$ | $10, 1, 0.1$ $[7.23]$
@@ -65,7 +65,7 @@ AOS | $\tau$, $\tau_2$, $\lambda$ | $(1, 5, 10, 20)$, $(1)$, $(0.1)$ | $1, 1, 0.
 
 The table below shows the hyper-parameters optimized for each method, as well as the values tested, the default value and the optimal value. Between square brackets for the two last columns is the $Avg.WER$ for the given setting on the test experiment. 
 
-method  | hyper-parameters | values tried | default | optimal
+method  | hyper-parameters | values tested | default | optimal
 ------------- | ------------- | ------------- | ------------- | ------------- 
 ER | $\lambda$ | $(0.1, 0.2, 0.3, 0.5)$ | $0.1$ $[9.40]$ | $0.1$ $[9.40]$
 AOS | $\tau$, $\tau_2$, $\lambda$ | $(1, 5, 10, 20)$, $(1)$, $(0.1)$ | $1, 1, 0.1$ $[10.09]$ | $10, 1, 0.1$ $[9.35]$
