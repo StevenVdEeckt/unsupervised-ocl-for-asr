@@ -94,9 +94,6 @@ Table below shows the statistical significances for all (OCL and UOCL) methods:
 
 ![Significance Experiment 1](https://github.com/StevenVdEeckt/unsupervised-ocl-for-asr/blob/main/significance_testing_Experiment1_Results.png)
 
-Table below shows the statistical significances for the ablation study of AOS-U:
-
-![Significance Experiment 1 - Ablation](https://github.com/StevenVdEeckt/unsupervised-ocl-for-asr/blob/main/significance_testing_Experiment1_Ablation.png)
 
 ### Experiment 2
 
@@ -104,9 +101,7 @@ Table below shows the statistical significances for all (OCL and UOCL) methods:
 
 ![Significance Experiment 2](https://github.com/StevenVdEeckt/unsupervised-ocl-for-asr/blob/main/significance_testing_Experiment2_Results.png)
 
-Table below shows the statistical significances for the ablation study of AOS-U:
-
-![Significance Experiment 2 - Ablation](https://github.com/StevenVdEeckt/unsupervised-ocl-for-asr/blob/main/significance_testing_Experiment2_Ablation.png)
+Note that significance results for the ablation study are also available. 
 
 ## references
 
