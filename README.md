@@ -68,7 +68,7 @@ The table below shows the hyper-parameters optimized for each method, as well as
 method  | hyper-parameters | values tested | default | optimal
 ------------- | ------------- | ------------- | ------------- | ------------- 
 ER | $\lambda$ | $(0.1, 0.2, 0.3, 0.5)$ | $0.1$ $[9.40]$ | $0.1$ $[9.40]$
-AOS | $\tau$, $\tau_2$, $\lambda$ | $(1, 5, 10, 20)$, $(1)$, $(0.1)$ | $1, 1, 0.1$ $[10.09]$ | $10, 1, 0.1$ $[9.35]$
+AOS | $\tau$, $\tau_2$, $\lambda$ | $(1, 5, 10, 20)$, $(1)$, $(0.1)$ | $1, 1, 0.1$ $[10.09]$ | $20, 1, 0.1$ $[9.35]$
 
 
 
