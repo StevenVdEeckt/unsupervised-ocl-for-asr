@@ -120,6 +120,8 @@ Note that significance results for the ablation study are also available.
 
 [Vander Eeckt and Van hamme, 2022] S. Vander Eeckt and H. Van hamme, “Continual learning for monolingual end-to-end automatic speech recognition,” Proceedings EUSIPCO 2022, 2022.
 
+[Vander Eeckt and Van hamme, 2023] S. Vander Eeckt and H. Van hamme, “Rehearsal-free online continual learning for automatic speech recognition,” in Proc. Interspeech 2023, 2023.
+
 [Wanatabe et al., 2018] S. Watanabe et al., “ESPnet: End-to-end speech processing toolkit,” in Proceedings of Interspeech, 2018, pp. 2207–2211.
 
 
