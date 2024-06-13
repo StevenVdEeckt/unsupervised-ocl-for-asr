@@ -46,7 +46,7 @@ experiment  | dataset  | subset  | #utterances
 Experiment 1 | Libri-Adapt | gb-Nexus6, in-Respeaker |  18.2k
 Experiment 2 | Common Voice (English) | Accent: United States | 20.0k
 
-To determine the optimal value for a hyper-parameter, we try four different values and choose the value that results in the lowest Avg. WER, where Avg. WER for the 'test experiment' is computed as: $Avg.WER=(2*WER_{initial\_task}+WER_{test})/3$ (Since the 'test' task is so small, forgetting is expected to be less of an issue in the 'test experiment' than in the 'real experiment'. To make sure we still select a hyper-parameter value that overcomes catastrophic forgetting sufficiently, we give $WER_{initial\_task}$ of initial task us a higher weight).  The hyper-parameter value with the lowest Avg. WER is considered the optimal one.
+To determine the optimal value for a hyper-parameter, we try four different values and choose the value that results in the lowest Avg. WER, where Avg. WER for the 'test experiment' is computed as: $Avg.WER=(2*WER_{initialtask}+WER_{test})/3$ (Since the 'test' task is so small, forgetting is expected to be less of an issue in the 'test experiment' than in the 'real experiment'. To make sure we still select a hyper-parameter value that overcomes catastrophic forgetting sufficiently, we give $WER_{initial\_task}$ of initial task us a higher weight).  The hyper-parameter value with the lowest Avg. WER is considered the optimal one.
 
 We optimized the hyper-parameters for each method only on supervised OCL. The same values were then used in the unsupervised OCL methods. 
 
