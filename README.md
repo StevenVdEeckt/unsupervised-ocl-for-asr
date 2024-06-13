@@ -21,7 +21,7 @@ The data folder contains information regarding the data of the two experiments. 
 
 ### Experiment 1
 
-For Experiment 1, Librispeech-360h is adapted to six Libri-Adapt [Mathur et al., 2020] tasks, which are a combination of three accents (United States [us], India [in] and Great Britian [gb]) and two microphones (USB [u], Matrix [m]). These six tasks are merged in one training set, over which the model does one pass (since the paper considers **online** CL). During training, however, the utterances are sorted by task and by speaker. Table below contains the number of utterances per training set:
+For Experiment 1, Librispeech-360h [Panayotov et. al] is adapted to six Libri-Adapt [Mathur et al., 2020] tasks, which are a combination of three accents (United States [us], India [in] and Great Britian [gb]) and two microphones (USB [u], Matrix [m]). These six tasks are merged in one training set, over which the model does one pass (since the paper considers **online** CL). During training, however, the utterances are sorted by task and by speaker. Table below contains the number of utterances per training set:
 
 task  | dataset | #utterances 
 ------------- | ------------- | :-------------: 
@@ -30,7 +30,7 @@ libapt | Libri-Adapt | 91.6k
 
 ### Experiment 2
 
-For Experiment 2, the initial task is again Librispeech-360h [Panayotov et. al]. This task is first adapted to three accents from the Mozilla Common Voice English dataset (7.0 release - July 2021) [Ardila et al., 2020]. These accents are: Australia (aus), India (ind) and Ireland (ire). Next, it is adapted to a subset from the TEDLIUM-3 dataset [Hernandez et al., 2018]. The tasks are again merged in one large training set over which the model does again one pass. During training, utterances are again sorted by task and by speaker. The utterances for the training sets are given below:
+For Experiment 2, the initial task is again Librispeech-360h. This task is first adapted to three accents from the Mozilla Common Voice English dataset (7.0 release - July 2021) [Ardila et al., 2020]. These accents are: Australia (aus), India (ind) and Ireland (ire). Next, it is adapted to a subset from the TEDLIUM-3 dataset [Hernandez et al., 2018]. The tasks are again merged in one large training set over which the model does again one pass. During training, utterances are again sorted by task and by speaker. The utterances for the training sets are given below:
 
 task  | dataset | #utterances 
 ------------- | ------------- | :-------------: 
